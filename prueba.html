@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copiar Código HTML al Portapapeles</title>
+<style>
+    .copyButton {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 4px;
+        /*margin: 5px;*/
+        margin: 5px 0; /* Añadido margen vertical */
+        display: block; /* Cambia a un diseño de bloque para mostrar uno debajo del otro */
+    }
+</style>
+</head>
+<body>
+    <button class="copyButton" data-code="<a href='https://leofinance.io/@leoglossary/leoglossary-accelerated-death-benefits'>Accelerated Death Benefits</a>">Accelerated Death Benefits</button>
+
+    <button class="copyButton" data-code="<a href='https://leofinance.io/@leoglossary/leoglossary-accelerator'>Accelerator</a>">Accelerator</button>
+
+    <button class="copyButton" data-code='<a href="https://leofinance.io/@leoglossary/leoglossary-access-token">Access Token</a>'>Access Token</button>
+
+    <button class="copyButton" data-code='<a href="https://leofinance.io/@leoglossary/leoglossary-accidental-death-and-dismemberment-insurance">Accidental Death and Dismemberment Insurance</a>'>Accidental Death and Dismemberment Insurance</button>
+
+
+
+
+
+
+    <script>
+        var copyButtons = document.querySelectorAll(".copyButton");
+
+        copyButtons.forEach(function(button) {
+            button.addEventListener("click", function() {
+                var codeToCopy = this.getAttribute("data-code");
+                var tempTextarea = document.createElement("textarea");
+                tempTextarea.value = codeToCopy;
+                document.body.appendChild(tempTextarea);
+                tempTextarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempTextarea);
+
+                alert("Código copiado al portapapeles:\n\n" + codeToCopy);
+            });
+        });
+    </script>
+</body>
+</html>
